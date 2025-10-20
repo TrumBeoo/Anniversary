@@ -108,7 +108,7 @@ function goToScene2() {
     // Bật scrolling và kích hoạt scene 2
     document.body.classList.add('scene2-active');
     
-    // Ẩn scene 1
+    // Di chuyển scene 1 lên trên
     scene1.classList.add('hidden');
     backBtn.style.display = 'block';
     
@@ -117,7 +117,6 @@ function goToScene2() {
     
     // Hoàn thành transition
     setTimeout(() => {
-        scene1.style.display = 'none';
         window.scrollTo(0, 0);
         initScrollAnimations();
     }, 1000);
@@ -128,18 +127,17 @@ function goToScene2() {
  */
 function goToScene3() {
     document.body.classList.add('scene3-active');
-    document.body.classList.remove('scene2-active');
     
-    const scene2 = document.getElementById('scene2');
     const backBtn = document.getElementById('backBtn');
     const backBtn3 = document.getElementById('backBtn3');
     
-    scene2.style.display = 'none';
     backBtn.style.display = 'none';
     backBtn3.style.display = 'block';
     
     // Reset trạng thái lá thư
-    letterOpened = false;
+    if (typeof letterOpened !== 'undefined') {
+        letterOpened = false;
+    }
     
     // Kích hoạt hiệu ứng lá thư ngay lập tức
     setTimeout(() => {
@@ -149,7 +147,9 @@ function goToScene3() {
             // Tự động mở lá thư và bắt đầu viết
             setTimeout(() => {
                 if (window.initHandwrittenLetter) {
-                    window.letterOpened = true;
+                    if (typeof window.letterOpened !== 'undefined') {
+                        window.letterOpened = true;
+                    }
                     letter.classList.add('opening');
                     window.initHandwrittenLetter();
                 }
@@ -163,13 +163,10 @@ function goToScene3() {
  */
 function goBackToScene2() {
     document.body.classList.remove('scene3-active');
-    document.body.classList.add('scene2-active');
     
-    const scene2 = document.getElementById('scene2');
     const backBtn = document.getElementById('backBtn');
     const backBtn3 = document.getElementById('backBtn3');
     
-    scene2.style.display = 'block';
     backBtn.style.display = 'block';
     backBtn3.style.display = 'none';
 }
@@ -186,7 +183,6 @@ function goBackToCard() {
     document.body.classList.remove('scene2-active', 'scene3-active');
     
     // Hiện scene 1
-    scene1.style.display = 'flex';
     backBtn.style.display = 'none';
     fallingHearts.style.display = 'none';
     

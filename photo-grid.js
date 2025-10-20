@@ -20,9 +20,9 @@ function initPhotoGrid() {
         centeredSlides: true,
         slidesPerView: 3,
         loop: true,
-        speed: 500,
+        speed: 300,
         autoplay: {
-            delay: 2000,
+            delay: 1500,
             disableOnInteraction: false,
             pauseOnMouseEnter: true
         },
@@ -93,17 +93,27 @@ function initPhotoGrid() {
                 }
             });
             
-            // Touch events for mobile
+            // Touch events for mobile - only start rotation on long press
+            let touchStartTime = 0;
+            let rotationStarted = false;
+            
             slide.addEventListener('touchstart', (e) => {
-                isRotating = true;
+                touchStartTime = Date.now();
+                rotationStarted = false;
                 startX = e.touches[0].clientX;
                 rotatingSlide = slide;
                 slideRotation = getCurrentRotation(slide);
                 
-                slide.classList.add('dragging', 'rotating');
-                swiperInstance.autoplay.stop();
-                e.preventDefault();
-            });
+                // Start rotation after a delay to avoid conflicts with tap
+                setTimeout(() => {
+                    if (rotatingSlide === slide && Date.now() - touchStartTime > 300) {
+                        isRotating = true;
+                        rotationStarted = true;
+                        slide.classList.add('dragging', 'rotating');
+                        swiperInstance.autoplay.stop();
+                    }
+                }, 300);
+            }, { passive: true });
         });
     }
     
@@ -127,7 +137,7 @@ function initPhotoGrid() {
             applyRotation(rotatingSlide, newRotation);
             e.preventDefault();
         }
-    });
+    }, { passive: false });
     
     // Global mouse/touch end events
     document.addEventListener('mouseup', () => {
@@ -137,8 +147,14 @@ function initPhotoGrid() {
     });
     
     document.addEventListener('touchend', () => {
-        if (isRotating && rotatingSlide) {
-            endRotation();
+        // Reset rotation state
+        if (rotatingSlide) {
+            if (isRotating) {
+                endRotation();
+            } else {
+                // Clean up if rotation never started
+                rotatingSlide = null;
+            }
         }
     });
     
@@ -198,25 +214,58 @@ function initPhotoGrid() {
         initSlideRotation();
     }, 100);
 
+    // Variables for touch/click detection
+    let touchStartTime = 0;
+    let touchMoved = false;
+    let clickTimeout = null;
+
     photoItems.forEach(item => {
+        // Touch start - record time and reset moved flag
+        item.addEventListener('touchstart', (e) => {
+            touchStartTime = Date.now();
+            touchMoved = false;
+        }, { passive: true });
+
+        // Touch move - set moved flag
+        item.addEventListener('touchmove', (e) => {
+            touchMoved = true;
+        }, { passive: true });
+
+        // Touch end - handle as click if conditions are met
+        item.addEventListener('touchend', (e) => {
+            const touchDuration = Date.now() - touchStartTime;
+            
+            // If touch was short and didn't move much, treat as click
+            if (touchDuration < 500 && !touchMoved && !isRotating) {
+                e.preventDefault();
+                openPhotoModal(item);
+            }
+        });
+
+        // Regular click for desktop
         item.addEventListener('click', (e) => {
-            // Only open modal if not rotating
-            if (!isRotating) {
-                const title = item.getAttribute('data-title');
-                const message = item.getAttribute('data-message');
-                const imgSrc = item.querySelector('img').src;
-                const imgAlt = item.querySelector('img').alt;
-
-                modalImage.src = imgSrc;
-                modalImage.alt = imgAlt;
-                modalTitle.textContent = title;
-                modalMessage.textContent = message;
-
-                modal.classList.add('show');
-                document.body.style.overflow = 'hidden';
+            // Only handle click if not on mobile (no recent touch)
+            if (Date.now() - touchStartTime > 1000 && !isRotating) {
+                openPhotoModal(item);
             }
         });
     });
+
+    // Function to open photo modal
+    function openPhotoModal(item) {
+        const title = item.getAttribute('data-title');
+        const message = item.getAttribute('data-message');
+        const imgSrc = item.querySelector('img').src;
+        const imgAlt = item.querySelector('img').alt;
+
+        modalImage.src = imgSrc;
+        modalImage.alt = imgAlt;
+        modalTitle.textContent = title;
+        modalMessage.textContent = message;
+
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
 
     // Close modal when clicking outside
     modal.addEventListener('click', (e) => {
