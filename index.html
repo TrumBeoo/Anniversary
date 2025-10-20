@@ -6,12 +6,13 @@
     <title>❤️Kỷ niệm 1 năm bên nhau - Yêu bé nhiều!!❤️</title>
     <script src="/_sdk/element_sdk.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
     <audio id="bgMusic" loop>
-        <source src="3.mp3" type="audio/mp3">
+        <source src="audio/3.mp3" type="audio/mp3">
     </audio>
 
     <button class="audio-control" id="audioControl" onclick="toggleMusic()">
@@ -78,55 +79,70 @@
         </div>
         <div class="photo-grid-container">
             <h1 class="grid-title">Kỷ niệm của chúng ta 💕</h1>
-            <div class="photo-grid">
-                <div class="photo-item" data-title="Ngày bắt đầu" data-message="Cảm ơn anh/em đã bước vào cuộc đời này. Từ ngày ấy, mọi điều trở nên ấm áp hơn 💖">
-                    <img src="img/1.jpg" alt="Ngày bắt đầu">
-                    <div class="photo-overlay"><h3>Ngày bắt đầu</h3></div>
+            <div class="swiper photo-grid">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide photo-item" data-title="Ngày bắt đầu" data-message="Cảm ơn anh/em đã bước vào cuộc đời này. Từ ngày ấy, mọi điều trở nên ấm áp hơn 💖">
+                        <img src="img/1.jpg" alt="Ngày bắt đầu">
+                        <div class="photo-overlay"><h3>Ngày bắt đầu</h3></div>
+                        <div class="rotation-hint">Giữ và kéo để xoay ảnh 🔄</div>
+                    </div>
+                    <div class="swiper-slide photo-item" data-title="Lời yêu đầu tiên" data-message="Tháng này ghi dấu câu nói khiến tim mình run lên – 'Mình yêu nhau nhé?' 💞 Dù bao lâu, cảm xúc ấy vẫn như lần đầu">
+                        <img src="img/2.jpg" alt="Lời yêu đầu tiên">
+                        <div class="photo-overlay"><h3>Lời yêu đầu tiên</h3></div>
+                        <div class="rotation-hint">Giữ và kéo để xoay ảnh 🔄</div>
+                    </div>
+                    <div class="swiper-slide photo-item" data-title="Những buổi hẹn hò" data-message="Những lời chúc ngọt ngào và nụ cười rạng rỡ trong ngày đặc biệt của chúng ta">
+                        <img src="img/3.jpg" alt="Những buổi hẹn hò">
+                        <div class="photo-overlay"><h3>Những buổi hẹn hò</h3></div>
+                        <div class="rotation-hint">Giữ và kéo để xoay ảnh 🔄</div>
+                    </div>
+                    <div class="swiper-slide photo-item" data-title="Cùng nhau trưởng thành" data-message="Chúng ta đã học được cách yêu, cách lắng nghe, và cùng nhau vượt qua những điều nhỏ bé nhất 🌱">
+                        <img src="img/4.jpg" alt="Cùng nhau trưởng thành">
+                        <div class="photo-overlay"><h3>Cùng nhau trưởng thành</h3></div>
+                        <div class="rotation-hint">Giữ và kéo để xoay ảnh 🔄</div>
+                    </div>
+                    <div class="swiper-slide photo-item" data-title="Mưa đầu mùa" data-message="Dưới cơn mưa, mình nắm tay nhau thật chặt. Có lẽ tình yêu cũng bắt đầu từ những điều dịu dàng như thế 🌧️💗">
+                        <img src="img/5.jpg" alt="Mưa đầu mùa">
+                        <div class="photo-overlay"><h3>Mưa đầu mùa</h3></div>
+                        <div class="rotation-hint">Giữ và kéo để xoay ảnh 🔄</div>
+                    </div>
+                    <div class="swiper-slide photo-item" data-title="Kỷ niệm đầu tiên" data-message="Nụ cười của anh/em vẫn là điều khiến ngày dài bớt mệt mỏi nhất. Cảm ơn vì vẫn ở đây, cùng nhau 🌈">
+                        <img src="img/6.jpg" alt="Kỷ niệm đầu tiên">
+                        <div class="photo-overlay"><h3>Kỷ niệm đầu tiên</h3></div>
+                        <div class="rotation-hint">Giữ và kéo để xoay ảnh 🔄</div>
+                    </div>
+                    <div class="swiper-slide photo-item" data-title="Xa một chút nhưng không xa lòng" data-message="Dù có lúc xa nhau, nhưng trái tim vẫn hướng về cùng một nơi. Yêu thương chẳng bao giờ vơi 💞">
+                        <img src="img/7.jpg" alt="Xa một chút nhưng không xa lòng">
+                        <div class="photo-overlay"><h3>Xa một chút nhưng không xa lòng</h3></div>
+                        <div class="rotation-hint">Giữ và kéo để xoay ảnh 🔄</div>
+                    </div>
+                    <div class="swiper-slide photo-item" data-title="Những điều ngọt ngào" data-message="Cảm ơn anh/em đã mang đến những điều nhỏ bé mà đáng giá nhất trong cuộc sống này 🍰💋">
+                        <img src="img/8.jpg" alt="Những điều ngọt ngào">
+                        <div class="photo-overlay"><h3>Những điều ngọt ngào</h3></div>
+                        <div class="rotation-hint">Giữ và kéo để xoay ảnh 🔄</div>
+                    </div>
+                    <div class="swiper-slide photo-item" data-title="Chúng ta hiểu nhau hơn" data-message="Tình yêu không chỉ là lời nói, mà là những quan tâm thầm lặng. Và em/anh thấy mình thật may mắn 💌">
+                        <img src="img/9.jpg" alt="Chúng ta hiểu nhau hơn">
+                        <div class="photo-overlay"><h3>Chúng ta hiểu nhau hơn</h3></div>
+                        <div class="rotation-hint">Giữ và kéo để xoay ảnh 🔄</div>
+                    </div>
+                    <div class="swiper-slide photo-item" data-title="Cùng nhau đi qua khó khăn" data-message="Không phải lúc nào cũng vui, nhưng mình chưa từng buông tay. Và đó là điều đẹp nhất 💪❤️">
+                        <img src="img/10.jpg" alt="Cùng nhau đi qua khó khăn">
+                        <div class="photo-overlay"><h3>Cùng nhau đi qua khó khăn</h3></div>
+                        <div class="rotation-hint">Giữ và kéo để xoay ảnh 🔄</div>
+                    </div>
+                    <div class="swiper-slide photo-item" data-title="Yêu thương sâu sắc" data-message="Chúng ta đã đủ hiểu để thấy nhau trong mọi điều. Em/anh biết rằng, tình yêu này là thật 💍">
+                        <img src="img/11.jpg" alt="Yêu thương sâu sắc">
+                        <div class="photo-overlay"><h3>Yêu thương sâu sắc</h3></div>
+                        <div class="rotation-hint">Giữ và kéo để xoay ảnh 🔄</div>
+                    </div>
+                    <div class="swiper-slide photo-item" data-title="Trọn vẹn một năm" data-message="365 ngày – không quá dài, nhưng đủ để hiểu rằng... em/anh chính là người mà mình muốn đi cùng cả đời 💫">
+                        <img src="img/12.jpg" alt="Trọn vẹn một năm">
+                        <div class="photo-overlay"><h3>Trọn vẹn một năm</h3></div>
+                        <div class="rotation-hint">Giữ và kéo để xoay ảnh 🔄</div>
+                    </div>
                 </div>
-                <div class="photo-item" data-title="Lời yêu đầu tiên" data-message="Tháng này ghi dấu câu nói khiến tim mình run lên – 'Mình yêu nhau nhé?' 💞 Dù bao lâu, cảm xúc ấy vẫn như lần đầu">
-                    <img src="img/2.jpg" alt="Lời yêu đầu tiên">
-                    <div class="photo-overlay"><h3>Lời yêu đầu tiên</h3></div>
-                </div>
-                <div class="photo-item" data-title="Những buổi hẹn hò" data-message="Những lời chúc ngọt ngào và nụ cười rạng rỡ trong ngày đặc biệt của chúng ta">
-                    <img src="img/3.jpg" alt="Những buổi hẹn hò">
-                    <div class="photo-overlay"><h3>Những buổi hẹn hò</h3></div>
-                </div>
-                <div class="photo-item" data-title="Cùng nhau trưởng thành" data-message="Chúng ta đã học được cách yêu, cách lắng nghe, và cùng nhau vượt qua những điều nhỏ bé nhất 🌱">
-                    <img src="img/4.jpg" alt="Cùng nhau trưởng thành">
-                    <div class="photo-overlay"><h3>Cùng nhau trưởng thành</h3></div>
-                </div>
-                <div class="photo-item" data-title="Mưa đầu mùa" data-message="Dưới cơn mưa, mình nắm tay nhau thật chặt. Có lẽ tình yêu cũng bắt đầu từ những điều dịu dàng như thế 🌧️💗">
-                    <img src="img/5.jpg" alt="Mưa đầu mùa">
-                    <div class="photo-overlay"><h3>Mưa đầu mùa</h3></div>
-                </div>
-                <div class="photo-item" data-title="Kỷ niệm đầu tiên" data-message="Nụ cười của anh/em vẫn là điều khiến ngày dài bớt mệt mỏi nhất. Cảm ơn vì vẫn ở đây, cùng nhau 🌈">
-                    <img src="img/6.jpg" alt="Kỷ niệm đầu tiên">
-                    <div class="photo-overlay"><h3>Kỷ niệm đầu tiên</h3></div>
-                </div>
-                <div class="photo-item" data-title="Xa một chút nhưng không xa lòng" data-message="Dù có lúc xa nhau, nhưng trái tim vẫn hướng về cùng một nơi. Yêu thương chẳng bao giờ vơi 💞">
-                    <img src="img/7.jpg" alt="Xa một chút nhưng không xa lòng">
-                    <div class="photo-overlay"><h3>Xa một chút nhưng không xa lòng</h3></div>
-                </div>
-                <div class="photo-item" data-title="Những điều ngọt ngào" data-message="Cảm ơn anh/em đã mang đến những điều nhỏ bé mà đáng giá nhất trong cuộc sống này 🍰💋">
-                    <img src="img/8.jpg" alt="Những điều ngọt ngào">
-                    <div class="photo-overlay"><h3>Những điều ngọt ngào</h3></div>
-                </div>
-                <div class="photo-item" data-title="Chúng ta hiểu nhau hơn" data-message="Tình yêu không chỉ là lời nói, mà là những quan tâm thầm lặng. Và em/anh thấy mình thật may mắn 💌">
-                    <img src="img/9.jpg" alt="Chúng ta hiểu nhau hơn">
-                    <div class="photo-overlay"><h3>Chúng ta hiểu nhau hơn</h3></div>
-                </div>
-                <div class="photo-item" data-title="Cùng nhau đi qua khó khăn" data-message="Không phải lúc nào cũng vui, nhưng mình chưa từng buông tay. Và đó là điều đẹp nhất 💪❤️">
-                    <img src="img/10.jpg" alt="Cùng nhau đi qua khó khăn">
-                    <div class="photo-overlay"><h3>Cùng nhau đi qua khó khăn</h3></div>
-                </div>
-                <div class="photo-item" data-title="Yêu thương sâu sắc" data-message="Chúng ta đã đủ hiểu để thấy nhau trong mọi điều. Em/anh biết rằng, tình yêu này là thật 💍">
-                    <img src="img/11.jpg" alt="Yêu thương sâu sắc">
-                    <div class="photo-overlay"><h3>Yêu thương sâu sắc</h3></div>
-                </div>
-                <div class="photo-item" data-title="Trọn vẹn một năm" data-message="365 ngày – không quá dài, nhưng đủ để hiểu rằng... em/anh chính là người mà mình muốn đi cùng cả đời 💫">
-                    <img src="img/12.jpg" alt="Trọn vẹn một năm">
-                    <div class="photo-overlay"><h3>Trọn vẹn một năm</h3></div>
-                </div>
+                <div class="swiper-pagination"></div>
             </div>
             <button class="surprise-btn" onclick="goToScene3()">
                 <span class="btn-icon">🎁</span>
@@ -183,6 +199,7 @@
     <script src="audio.js"></script>
     <script src="animations.js"></script>
     <script src="handwritten-letter.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="photo-grid.js"></script>
     <style>@view-transition { navigation: auto; }</style>
 </body>
