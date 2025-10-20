@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️Kỷ niệm 1 năm bên nhau - Yêu bé nhiều!!❤️</title>
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <audio id="bgMusic" loop>
+        <source src="3.mp3" type="audio/mp3">
+    </audio>
+
+    <button class="audio-control" id="audioControl" onclick="toggleMusic()">
+        🔇
+    </button>
+
+    <!-- Scene 0: Airplane Animation -->
+    <section class="scene-0" id="scene0">
+        <div class="airplane" id="airplane"></div>
+        <div class="letter" id="letter">
+            <lottie-player id="letterAnimation" src="animations/Love letter.json" background="transparent" speed="1" style="width: 58px; height: 58px;" loop></lottie-player>
+        </div>
+    </section>
+
+    <!-- Falling Hearts Effect -->
+    <div class="falling-hearts" id="fallingHearts">
+        <div class="falling-heart">💖</div>
+        <div class="falling-heart">💕</div>
+        <div class="falling-heart">💖</div>
+        <div class="falling-heart">💕</div>
+        <div class="falling-heart">💖</div>
+        <div class="falling-heart">💕</div>
+        <div class="falling-heart">💖</div>
+        <div class="falling-heart">💕</div>
+        <div class="falling-heart">💖</div>
+        <div class="falling-heart">💕</div>
+    </div>
+
+    <!-- Scene 1: Card -->
+    <section class="scene-1" id="scene1">
+        <div class="floating-hearts">
+            <div class="floating-heart">💖</div>
+            <div class="floating-heart">💕</div>
+            <div class="floating-heart">💖</div>
+            <div class="floating-heart">💕</div>
+        </div>
+        <div class="card-container" onclick="flipCard()">
+            <div class="card" id="card">
+                <div class="card-front">
+                    <h1 class="card-title" id="cardTitle">Kỷ niệm 365 ngày bên nhau</h1>
+                    <p class="card-subtitle">TrumBeoo 💞 Vịt</p>
+                    <p class="txt-date">20/10/2024 - 20/10/2025 </p>
+                </div>
+                <div class="card-back">
+                    <p class="card-message" id="cardMessage">365 ngày yêu thương, 365 ngày hạnh phúc. Cảm ơn bé đã làm cuộc sống của anh trở nên ý nghĩa hơn. Yêu em bé của anh! 💕</p>
+                    <button class="card-explore-btn" onclick="event.stopPropagation(); goToScene2();" style="display: none;" id="cardExploreBtn">
+                        <span class="btn-icon">💕</span>
+                        <span class="btn-text">Xem kỷ niệm</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scene 2: Photo Grid -->
+    <button class="back-btn" onclick="goBackToCard()" id="backBtn">Quay lại</button>
+    <section class="scene-2" id="scene2">
+        <div class="stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+        <div class="photo-grid-container">
+            <h1 class="grid-title">Kỷ niệm của chúng ta 💕</h1>
+            <div class="photo-grid">
+                <div class="photo-item" data-title="Ngày bắt đầu" data-message="Cảm ơn anh/em đã bước vào cuộc đời này. Từ ngày ấy, mọi điều trở nên ấm áp hơn 💖">
+                    <img src="img/1.jpg" alt="Ngày bắt đầu">
+                    <div class="photo-overlay"><h3>Ngày bắt đầu</h3></div>
+                </div>
+                <div class="photo-item" data-title="Lời yêu đầu tiên" data-message="Tháng này ghi dấu câu nói khiến tim mình run lên – 'Mình yêu nhau nhé?' 💞 Dù bao lâu, cảm xúc ấy vẫn như lần đầu">
+                    <img src="img/2.jpg" alt="Lời yêu đầu tiên">
+                    <div class="photo-overlay"><h3>Lời yêu đầu tiên</h3></div>
+                </div>
+                <div class="photo-item" data-title="Những buổi hẹn hò" data-message="Những lời chúc ngọt ngào và nụ cười rạng rỡ trong ngày đặc biệt của chúng ta">
+                    <img src="img/3.jpg" alt="Những buổi hẹn hò">
+                    <div class="photo-overlay"><h3>Những buổi hẹn hò</h3></div>
+                </div>
+                <div class="photo-item" data-title="Cùng nhau trưởng thành" data-message="Chúng ta đã học được cách yêu, cách lắng nghe, và cùng nhau vượt qua những điều nhỏ bé nhất 🌱">
+                    <img src="img/4.jpg" alt="Cùng nhau trưởng thành">
+                    <div class="photo-overlay"><h3>Cùng nhau trưởng thành</h3></div>
+                </div>
+                <div class="photo-item" data-title="Mưa đầu mùa" data-message="Dưới cơn mưa, mình nắm tay nhau thật chặt. Có lẽ tình yêu cũng bắt đầu từ những điều dịu dàng như thế 🌧️💗">
+                    <img src="img/5.jpg" alt="Mưa đầu mùa">
+                    <div class="photo-overlay"><h3>Mưa đầu mùa</h3></div>
+                </div>
+                <div class="photo-item" data-title="Kỷ niệm đầu tiên" data-message="Nụ cười của anh/em vẫn là điều khiến ngày dài bớt mệt mỏi nhất. Cảm ơn vì vẫn ở đây, cùng nhau 🌈">
+                    <img src="img/6.jpg" alt="Kỷ niệm đầu tiên">
+                    <div class="photo-overlay"><h3>Kỷ niệm đầu tiên</h3></div>
+                </div>
+                <div class="photo-item" data-title="Xa một chút nhưng không xa lòng" data-message="Dù có lúc xa nhau, nhưng trái tim vẫn hướng về cùng một nơi. Yêu thương chẳng bao giờ vơi 💞">
+                    <img src="img/7.jpg" alt="Xa một chút nhưng không xa lòng">
+                    <div class="photo-overlay"><h3>Xa một chút nhưng không xa lòng</h3></div>
+                </div>
+                <div class="photo-item" data-title="Những điều ngọt ngào" data-message="Cảm ơn anh/em đã mang đến những điều nhỏ bé mà đáng giá nhất trong cuộc sống này 🍰💋">
+                    <img src="img/8.jpg" alt="Những điều ngọt ngào">
+                    <div class="photo-overlay"><h3>Những điều ngọt ngào</h3></div>
+                </div>
+                <div class="photo-item" data-title="Chúng ta hiểu nhau hơn" data-message="Tình yêu không chỉ là lời nói, mà là những quan tâm thầm lặng. Và em/anh thấy mình thật may mắn 💌">
+                    <img src="img/9.jpg" alt="Chúng ta hiểu nhau hơn">
+                    <div class="photo-overlay"><h3>Chúng ta hiểu nhau hơn</h3></div>
+                </div>
+                <div class="photo-item" data-title="Cùng nhau đi qua khó khăn" data-message="Không phải lúc nào cũng vui, nhưng mình chưa từng buông tay. Và đó là điều đẹp nhất 💪❤️">
+                    <img src="img/10.jpg" alt="Cùng nhau đi qua khó khăn">
+                    <div class="photo-overlay"><h3>Cùng nhau đi qua khó khăn</h3></div>
+                </div>
+                <div class="photo-item" data-title="Yêu thương sâu sắc" data-message="Chúng ta đã đủ hiểu để thấy nhau trong mọi điều. Em/anh biết rằng, tình yêu này là thật 💍">
+                    <img src="img/11.jpg" alt="Yêu thương sâu sắc">
+                    <div class="photo-overlay"><h3>Yêu thương sâu sắc</h3></div>
+                </div>
+                <div class="photo-item" data-title="Trọn vẹn một năm" data-message="365 ngày – không quá dài, nhưng đủ để hiểu rằng... em/anh chính là người mà mình muốn đi cùng cả đời 💫">
+                    <img src="img/12.jpg" alt="Trọn vẹn một năm">
+                    <div class="photo-overlay"><h3>Trọn vẹn một năm</h3></div>
+                </div>
+            </div>
+            <button class="surprise-btn" onclick="goToScene3()">
+                <span class="btn-icon">🎁</span>
+                <span class="btn-text">Bất ngờ ở đây</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Scene 3: Handwritten Letter -->
+    <section class="scene-3" id="scene3">
+        <div class="handwritten-letter" id="handwrittenLetter">
+            <div class="letter-paper">
+                <div class="letter-header">
+                    <div class="date">20/10/2025</div>
+                </div>
+                <div class="letter-content">
+                    <div class="greeting handwrite-text" data-text="Gửi em bé của anh,">Gửi em bé của anh,</div>
+                    <div class="letter-body">
+                        <p class="handwrite-text" data-text="365 ngày đã trôi qua, nhưng tình yêu dành cho em vẫn mãi như ngày đầu tiên.">365 ngày đã trôi qua, nhưng tình yêu dành cho em vẫn mãi như ngày đầu tiên.</p>
+                        <p class="handwrite-text" data-text="Cảm ơn em đã làm cho cuộc sống của anh trở nên ý nghĩa và đầy màu sắc.">Cảm ơn em đã làm cho cuộc sống của anh trở nên ý nghĩa và đầy màu sắc.</p>
+                    </div>
+                    <div class="signature">
+                        <div class="handwrite-text signature-text" data-text="Yêu em nhiều lắm,">Yêu em nhiều lắm,</div>
+                        <div class="handwrite-text signature-name" data-text="TrumBeoo ❤️">TrumBeoo ❤️</div>
+                    </div>
+                </div>
+                <div class="letter-decoration">
+                    <div class="heart-doodle">💕</div>
+                    <div class="heart-doodle">💖</div>
+                    <div class="heart-doodle">💗</div>
+                </div>
+            </div>
+        </div>
+        <button class="back-btn" onclick="goBackToScene2()" id="backBtn3">Quay lại</button>
+    </section>
+
+    <!-- Photo Modal -->
+    <div class="photo-modal" id="photoModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <img class="modal-image" id="modalImage" src="" alt="">
+            <div class="modal-text">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <p class="modal-message" id="modalMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+    <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="config.js"></script>
+    <script src="ui.js"></script>
+    <script src="audio.js"></script>
+    <script src="animations.js"></script>
+    <script src="handwritten-letter.js"></script>
+    <script src="photo-grid.js"></script>
+    <style>@view-transition { navigation: auto; }</style>
+</body>
+</html>

@@ -1,0 +1,400 @@
+/* ============================================
+   TABLET (768px - 1024px)
+   ============================================ */
+@media (max-width: 1024px) {
+    .card {
+        width: 80%;
+        max-width: 450px;
+        height: auto;
+        min-height: 280px;
+    }
+
+    .card-front, .card-back {
+        padding: 30px;
+    }
+
+    .card-title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .card-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .memory-content {
+        padding: 0 30px;
+    }
+
+    .memory-image {
+        width: 350px;
+        height: 250px;
+        font-size: 3.5rem;
+        margin-right: 40px;
+    }
+
+    .memory-section:nth-child(even) .memory-image {
+        margin-right: 0;
+        margin-left: 40px;
+    }
+
+    .memory-title {
+        font-size: 2.2rem;
+    }
+
+    .memory-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+}
+
+/* ============================================
+   MOBILE LANDSCAPE (max-height 500px)
+   ============================================ */
+@media (orientation: landscape) and (max-height: 500px) {
+    .scene-1 {
+        min-height: 500px;
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .card {
+        margin: 20px 0;
+    }
+
+    .continue-btn {
+        position: relative;
+        margin-top: 30px;
+        bottom: auto;
+        transform: none;
+    }
+
+    .memory-section {
+        height: auto;
+        min-height: 100vh;
+        padding: 40px 20px;
+    }
+
+    .memory-content {
+        flex-direction: column !important;
+        padding: 20px 0;
+    }
+
+    .memory-image {
+        width: 100%;
+        max-width: 250px;
+        height: 180px;
+        font-size: 2.5rem;
+        margin: 0 0 30px 0 !important;
+    }
+
+    .back-btn {
+        position: relative;
+        bottom: auto;
+        transform: none;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
+
+/* ============================================
+   MOBILE (max-width 768px)
+   ============================================ */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    /* Scene 1 Mobile */
+    .scene-1 {
+        padding: 20px;
+    }
+
+    .card {
+        width: 95%;
+        max-width: 100%;
+        height: auto;
+        min-height: 300px;
+        max-height: 90vh;
+    }
+
+    .card-front, .card-back {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    .card-title {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+        text-shadow: 1px 1px 3px rgb(255, 48, 82);
+    }
+
+    .card-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .card-message {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .continue-btn {
+        font-size: 0.95rem;
+        padding: 12px 24px;
+        bottom: 20px;
+        border-radius: 40px;
+    }
+
+    /* Scene 2 Mobile */
+    .scene-2 {
+        min-height: auto;
+    }
+
+    .memory-section {
+        height: auto;
+        min-height: 85vh;
+        padding: 30px 0;
+    }
+
+    .memory-content {
+        flex-direction: column !important;
+        text-align: center;
+        padding: 30px 20px;
+        margin: 0;
+    }
+
+    .memory-image {
+        width: 100%;
+        max-width: 280px;
+        height: 220px;
+        font-size: 3rem;
+        margin: 0 auto 25px !important;
+        border-radius: 20px;
+    }
+
+    .memory-text {
+        width: 100%;
+    }
+
+    .memory-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .memory-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    /* Back Button Mobile */
+    .back-btn {
+        font-size: 0.95rem;
+        padding: 12px 24px;
+        bottom: 20px;
+        border-radius: 40px;
+    }
+
+    /* Audio Control Mobile */
+    .audio-control {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+        bottom: 15px;
+        right: 15px;
+        padding: 12px;
+    }
+
+    .floating-heart {
+        font-size: 1.3rem;
+    }
+
+    .floating-heart:nth-child(1) { left: 5%; top: 15%; }
+    .floating-heart:nth-child(2) { left: 85%; top: 25%; }
+    .floating-heart:nth-child(3) { left: 15%; top: 75%; }
+    .floating-heart:nth-child(4) { left: 75%; top: 85%; }
+}
+
+/* ============================================
+   SMALL MOBILE (max-width 480px)
+   ============================================ */
+@media (max-width: 480px) {
+    .card {
+        width: 350px;
+        height: auto;
+    }
+
+    .card-front, .card-back {
+        padding: 20px 15px;
+    }
+
+    .card-title {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    .card-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+
+    .card-message {
+        font-size: 1.8rem;
+        line-height: 1.4;
+    }
+
+    .continue-btn {
+        font-size: 0.85rem;
+        padding: 10px 20px;
+        bottom: 15px;
+    }
+
+    /* Memory sections - small mobile */
+    .memory-section {
+        min-height: 90vh;
+        padding: 20px 0;
+    }
+
+    .memory-content {
+        padding: 20px 15px;
+    }
+
+    .memory-image {
+        width: 100%;
+        max-width: 240px;
+        height: 180px;
+        font-size: 2.5rem;
+        margin: 0 auto 20px !important;
+        border-radius: 15px;
+    }
+
+    .memory-title {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+
+    .memory-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .back-btn {
+        font-size: 0.85rem;
+        padding: 10px 20px;
+        bottom: 15px;
+    }
+
+    .audio-control {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        bottom: 12px;
+        right: 12px;
+        padding: 10px;
+    }
+
+    .floating-heart {
+        font-size: 1.2rem;
+    }
+
+    .falling-heart {
+        font-size: 1.2rem;
+    }
+}
+
+/* ============================================
+   EXTRA SMALL (max-width 360px)
+   ============================================ */
+@media (max-width: 360px) {
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .card-message {
+        font-size: 0.8rem;
+    }
+
+    .memory-title {
+        font-size: 1rem;
+    }
+
+    .memory-description {
+        font-size: 0.8rem;
+    }
+
+    .memory-image {
+        max-width: 200px !important;
+        height: 150px;
+        font-size: 2rem;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY & PRINT
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media print {
+    .audio-control,
+    .continue-btn,
+    .back-btn,
+    .falling-hearts {
+        display: none !important;
+    }
+
+    .scene-1,
+    .scene-2 {
+        page-break-after: always;
+    }
+}
+
+/* ============================================
+   HIGH DPI SCREENS
+   ============================================ */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .card-front, .card-back {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .memory-image {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* ============================================
+   TOUCH DEVICES
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+    .card:hover {
+        transform: none;
+    }
+
+    .audio-control:hover,
+    .continue-btn:hover,
+    .back-btn:hover {
+        transform: scale(1.05);
+    }
+
+    .memory-content:hover .memory-image::before {
+        animation: none;
+    }
+
+    button {
+        padding: 15px 30px;
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
